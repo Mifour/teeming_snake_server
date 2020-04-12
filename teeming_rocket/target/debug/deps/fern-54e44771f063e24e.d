@@ -1,0 +1,12 @@
+/Users/thomas/Documents/teeming_snake_server/teeming_rocket/target/debug/deps/fern-54e44771f063e24e.rmeta: /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/lib.rs /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/builders.rs /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/errors.rs /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/log_impl.rs /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/colors.rs /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/meta.rs
+
+/Users/thomas/Documents/teeming_snake_server/teeming_rocket/target/debug/deps/libfern-54e44771f063e24e.rlib: /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/lib.rs /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/builders.rs /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/errors.rs /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/log_impl.rs /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/colors.rs /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/meta.rs
+
+/Users/thomas/Documents/teeming_snake_server/teeming_rocket/target/debug/deps/fern-54e44771f063e24e.d: /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/lib.rs /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/builders.rs /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/errors.rs /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/log_impl.rs /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/colors.rs /Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/meta.rs
+
+/Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/lib.rs:
+/Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/builders.rs:
+/Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/errors.rs:
+/Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/log_impl.rs:
+/Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/colors.rs:
+/Users/thomas/.cargo/registry/src/github.com-1ecc6299db9ec823/fern-0.5.9/src/meta.rs:
