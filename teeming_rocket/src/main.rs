@@ -123,9 +123,9 @@ fn generate(remote_addr: SocketAddr, n: State<NumberTrack>, hashmap: State<MapOf
 	    }
 	}
 	
-	(*lock).insert((*code).to_string(), remote_addr.to_string());
+	(*lock).insert((*code).to_string(), remote_addr.clone().to_string());
 
-    return (*code).to_string();
+    return  format!("{}{}{}",(*code).to_string(),"@".to_string(), remote_addr.to_string() );
 }
 
 #[get("/free/<code>")]
@@ -148,6 +148,7 @@ fn find(code: &RawStr, hashmap: State<MapOfCode>) -> String {
 }
 
 fn main() {
+	// sudo ROCKET_ENV=staging cargo run
 	// 7, 6, 5 ....
     rocket::ignite().mount("/", routes![find, free, generate]).manage(
 		MapOfCode { map: Mutex::new( 
