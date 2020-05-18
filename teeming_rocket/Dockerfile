@@ -1,13 +1,17 @@
 FROM rust:1.40 as builder
-WORKDIR /usr/src/myapp
+WORKDIR /usr/src/teeming_rocket
 COPY . .
+RUN rustup update nightly && rustup default nightly
 RUN cargo install --path .
 RUN cargo build --release
 
 FROM debian:buster-slim
-RUN apt-get update && apt-get install -y extra-runtime-dependencies
-COPY --from=builder /usr/local/cargo/bin/myapp /usr/local/bin/myapp
+COPY --from=builder /usr/local/cargo/bin/teeming_rocket /usr/local/bin/teeming_rocket
 
-EXPOSE 8000
+ENV ROCKET_ADDRESS=0.0.0.0
+ENV ROCKET_PORT=8080
+EXPOSE 8080
+CMD ["teeming_rocket"]
 
-CMD ["/teeming_rocket"]
+# docker run --detach --publish 8000:8080 <image tag>
+# this cmd use the optimazed compiled application, it should be available right away.
