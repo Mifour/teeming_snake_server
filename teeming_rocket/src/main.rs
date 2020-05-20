@@ -11,8 +11,13 @@ use rocket::http::RawStr;
 use rocket::State;
 use std::collections::HashMap;
 use std::collections::VecDeque;
-use std::net::SocketAddr;
+use std::net::{IpAddr, SocketAddr};
 use std::sync::Mutex;
+
+use rocket::request::{self, Request, FromRequest};
+use rocket::Outcome;
+use rocket::http::Status;
+
 
 
 #[macro_use] extern crate rocket;
@@ -104,9 +109,37 @@ macro_rules! map(
 struct NumberTrack{ n: Mutex<i64>}
 struct MapOfCode{ map: Mutex<HashMap<String, String>>}
 
+#[derive(Clone, Debug)]
+pub struct RealIP(IpAddr);
+impl<'a, 'r> FromRequest<'a, 'r> for RealIP {
+    type Error = ();
+    fn from_request(request: &'a Request<'r>) -> request::Outcome<Self, Self::Error> {
+        match request.client_ip() {
+            Some(ip) => Outcome::Success(RealIP(ip)),
+            None => Outcome::Failure((Status::from_code(401).unwrap(), ()))
+        }
+    }
+}
+
 #[get("/generate")]
-fn generate(remote_addr: SocketAddr, n: State<NumberTrack>, hashmap: State<MapOfCode>) -> String {
+fn generate(_remote_addr: SocketAddr, ip: RealIP, n: State<NumberTrack>, hashmap: State<MapOfCode>) -> String {
     //ask for a code
+    let remote_addr: String = format!("{:?}",ip).to_string();
+    
+    /*if let Some(current) = req.remote() {
+        let ip = req.headers()
+            .get_one("X-Real-IP")
+            .and_then(|ip| {
+                ip.parse()
+                    .map_err(|_| warn_!("'X-Real-IP' header is malformed: {}", ip))
+                    .ok()
+            });
+
+        if let Some(ip) = ip {
+            req.set_remote(SocketAddr::new(ip, current.port()));
+        }
+    }*/
+
     let mut counter = 0;
     let mut code = n.n.lock().unwrap();
     let mut lock = hashmap.map.lock().unwrap();
